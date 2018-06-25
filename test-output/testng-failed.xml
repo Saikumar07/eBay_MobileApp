@@ -3,7 +3,17 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test verbose="2" name="Default test">
     <classes>
-      <class name="com.eBay.Testcases.EbayCheckout"/>
+      <class name="com.eBay.Testcases.AddItemToCart"/>
     </classes>
   </test> <!-- Default test -->
+  <test name="Default test(failed)">
+    <classes>
+      <class name="com.eBay.Testcases.AddItemToCart">
+        <methods>
+          <include name="addProductToCartPage"/>
+          <include name="createAppiumDriver"/>
+        </methods>
+      </class> <!-- com.eBay.Testcases.AddItemToCart -->
+    </classes>
+  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

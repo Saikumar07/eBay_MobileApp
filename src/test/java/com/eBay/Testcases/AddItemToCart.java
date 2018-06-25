@@ -17,8 +17,8 @@ public class AddItemToCart extends BaseTest{
 	private static String siginUserName = propertyName("ebayUserName");
 	private static String siginPassword = propertyName("ebayPassword");
 
-	@BeforeClass
-	public void login() throws Exception{
+	@Test
+	public void addProductToCartPage() throws Exception{
 		homePage=new HomePage(driver);
 		signinPage=new SignInPage(driver);
 		linkAccountPage=new LinkAccountsPage(driver);
@@ -26,11 +26,6 @@ public class AddItemToCart extends BaseTest{
 		homePage.clickOnSiginButton();
 		signinPage.signinToEbay(siginUserName, siginPassword);
 		linkAccountPage.clickOnNoThanks();
-	}
-
-	@Test
-	public void addProductToCartPage(){
-		System.out.println("Test");
 	}
 
 }

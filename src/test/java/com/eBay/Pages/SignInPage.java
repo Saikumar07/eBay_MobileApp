@@ -17,7 +17,7 @@ public class SignInPage extends PageObject {
 		super(driver);
 	}
 	
-	@FindBy(how = How.XPATH, using = "//*[@id='textview_sign_out_status']")
+	@FindBy(how = How.XPATH, using = "//*[@id='edit_text_username']")
 	private WebElement UserName;
 	
 	@FindBy(how = How.XPATH, using = "//*[@id='edit_text_password']")
@@ -32,8 +32,8 @@ public class SignInPage extends PageObject {
 	//Metthods
 	//Login to ebay
 	public void signinToEbay(String userName,String password){
-		BaseTest.sendkeys(UserName, userName);
-		BaseTest.sendkeys(Password, password);
+		UserName.sendKeys(userName);
+		Password.sendKeys(password);
 		BaseTest.click(SignIn);
 	}
 }

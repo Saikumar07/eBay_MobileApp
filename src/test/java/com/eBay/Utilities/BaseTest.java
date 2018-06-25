@@ -16,6 +16,7 @@ import java.util.Properties;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -92,22 +93,8 @@ public class BaseTest {
 
 	//click the elemnets
 	public static void click(WebElement element){
-		try{
 			waitForElementTobeClickable(element);
 			element.click();
-		}catch(Exception e){
-			System.out.println(e.getMessage());
-		}
-	}
-
-	//click the elemnets
-	public static void sendkeys(WebElement element,String text){
-		try{
-			waitForElementIsVisible(element);
-			element.sendKeys(text);
-		}catch(Exception e){
-			System.out.println(e.getMessage());
-		}
 	}
 
 	//After Test Annotation makes a java function to run every time after a TestNG test case
