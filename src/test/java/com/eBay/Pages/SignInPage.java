@@ -17,23 +17,22 @@ public class SignInPage extends PageObject {
 		super(driver);
 	}
 	
-	@FindBy(how = How.XPATH, using = "//*[@id='edit_text_username']")
+	@FindBy(how = How.XPATH, using = "//android.widget.EditText[contains(@resource-id,'edit_text_username')]")
 	private WebElement UserName;
 	
-	@FindBy(how = How.XPATH, using = "//*[@id='edit_text_password']")
+	@FindBy(how = How.XPATH, using = "//android.widget.EditText[contains(@resource-id,'edit_text_password')]")
 	private WebElement Password;
 	
-	@FindBy(how = How.XPATH, using = "//*[@text='SIGN IN']")
+	@FindBy(how = How.XPATH, using = "//android.widget.Button[contains(@resource-id,'button_sign_in')]")
 	private WebElement SignIn;
-	
-	@FindBy(how = How.XPATH, using = "//*[@text='NO THANKS']")
-	private WebElement NoThanks;
 	
 	//Metthods
 	//Login to ebay
 	public void signinToEbay(String userName,String password){
+		BaseTest.waitForElementIsVisible(UserName);
 		UserName.sendKeys(userName);
 		Password.sendKeys(password);
 		BaseTest.click(SignIn);
+		BaseTest.invisiblityOfElement();
 	}
 }

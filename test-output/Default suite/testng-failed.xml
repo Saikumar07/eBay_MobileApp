@@ -6,14 +6,4 @@
       <class name="com.eBay.Testcases.AddItemToCart"/>
     </classes>
   </test> <!-- Default test -->
-  <test name="Default test(failed)">
-    <classes>
-      <class name="com.eBay.Testcases.AddItemToCart">
-        <methods>
-          <include name="addProductToCartPage"/>
-          <include name="createAppiumDriver"/>
-        </methods>
-      </class> <!-- com.eBay.Testcases.AddItemToCart -->
-    </classes>
-  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

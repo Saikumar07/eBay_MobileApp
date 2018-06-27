@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [eBay suite]">
+  <test name="eBay Testcases">
+    <classes>
+      <class name="com.eBay.Testcases.PurchaseProduct"/>
+    </classes>
+  </test> <!-- eBay Testcases -->
+</suite> <!-- Failed suite [eBay suite] -->

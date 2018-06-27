@@ -15,7 +15,7 @@ public class LinkAccountsPage extends PageObject {
 		super(driver);
 	}
 	
-	@FindBy(how = How.XPATH, using = "//*[@text='NO THANKS']")
+	@FindBy(how = How.XPATH, using = "//android.widget.Button[contains(@resource-id,'button_google_deny')]")
 	private WebElement NoThanks;
 	
 	//Methods
