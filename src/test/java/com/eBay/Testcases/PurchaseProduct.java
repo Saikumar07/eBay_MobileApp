@@ -23,9 +23,6 @@ public class PurchaseProduct extends BaseTest{
 	private static String siginUserName = propertyName("ebayUserName");
 	private static String siginPassword = propertyName("ebayPassword");
 	
-	//1st Testcase
-	//1.Login to ebay
-	//2.verify login successfully or not
 	@Test(priority = 1)
 	public void signInToeBay() throws Exception{
 		System.out.println("Testcase 1");
@@ -33,11 +30,17 @@ public class PurchaseProduct extends BaseTest{
 		homePage=new HomePage(driver);
 		signinPage=new SignInPage(driver);
 		linkAccountPage=new LinkAccountsPage(driver);
+		//After launch the application click on Hamburger menu
 		homePage.clickOnHamburgerMenu();
+		//Click on sigin button
 		homePage.clickOnSiginButton();
+		//Enter valid credentials in sigin page then click on sigin button
 		signinPage.signinToEbay(siginUserName, siginPassword);
+		//click on No Thanks button in Link accounts page
 		linkAccountPage.clickOnNoThanks();
+		//Click on Hamburger Menu after signin
 		homePage.clickOnHamburgerMenu();
+		//Verify profile  image is displaying after signin using assertion
 		boolean userProfileImage=homePage.verifyUserProfileImage();
 		assertion.assertEquals(userProfileImage, true, "user profile is not displaying");
 		assertion.assertAll();
@@ -47,12 +50,19 @@ public class PurchaseProduct extends BaseTest{
 	public void purchaseTheProduct() throws Exception{
 		System.out.println("Testcase 2");
 		assertion=new SoftAssert();
+		//click on HomeButton
 		homePage.clickOnHomeButton();
+		//select product to purchase in homepage
 		homePage.selectProduct();
+		//click buy it now button
 		homePage.clickBuyItNow();
+		//cliick on review button in quantity page
 		homePage.reviewButton();
+		//click on proceed to pay button
 		homePage.proceedToPayButton();
+		//select payment option like cc/dc
 		homePage.clickOnCreditCard();
+		//verify paynow button is displaying or not using assertion
 		boolean payNowButton=homePage.verifyPayNowIsDisplayed();
 		assertion.assertEquals(payNowButton, true, "pay now button is not displaying");
 		assertion.assertAll();
