@@ -48,8 +48,8 @@ public class BaseTest {
 		//setting up desired capability
 		DesiredCapabilities caps = new DesiredCapabilities();
 		caps.setCapability("platform", "ANDROID");
-		caps.setCapability("platformVersion", "5.1.1");
-		caps.setCapability("deviceName", "50a3e295");
+		caps.setCapability("platformVersion", "9");
+		caps.setCapability("deviceName", "be1bccdc");
 		//caps.setCapability("app", app.getAbsolutePath());
 		caps.setCapability("appPackage", "com.ebay.mobile");
 		caps.setCapability("appActivity", "com.ebay.mobile.activities.MainActivity");
